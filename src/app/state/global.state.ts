@@ -1,6 +1,6 @@
 import { State, Action, StateContext, Selector } from '@ngxs/store';
 import { Global } from '../models/shared.models';
-import { Login } from '../guards/auth.actions';
+import { Login } from '../components/auth/store/auth.actions';
 
 
 @State<Global>({

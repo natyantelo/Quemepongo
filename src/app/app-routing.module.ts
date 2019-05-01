@@ -2,11 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { MujerComponent } from './components/mujer/mujer.component';
-import { LoginComponent } from './components/login/login.component';
-import { RegistroComponent } from './components/registro/registro.component';
 import { AboutComponent } from './components/about/about.component';
 import { ConjuntosComponent } from './components/conjuntos/conjuntos.component';
-import { AuthGuardGuard } from './guards/auth-guard.guard';
 import { InsertarPrendaComponent } from './components/insertar-prenda/insertar-prenda.component';
 import { MisPrendasComponent } from './components/mis-prendas/mis-prendas.component';
 import { CamisasComponent } from './components/camisas/camisas.component';
@@ -24,11 +21,16 @@ import { ShortsComponent } from './components/shorts/shorts.component';
 
 
 
+import { TagComponent } from './components/tag/tag.component';
+import { LoginComponent } from './components/auth/containers/login/login.component';
+import { RegisterComponent } from './components/auth/containers/register/register.component';
+import { ConjuntoComponent } from './components/conjunto/conjunto.component';
+import { AuthGuard } from './components/auth/services/auth.guard';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'mujer', component: MujerComponent },
-  { path: 'registro', component: RegistroComponent },
+  { path: 'registro', component: RegisterComponent },
   { path: 'camisas', component: CamisasComponent },
   { path: 'camisetas', component: CamisetasComponent },
   { path: 'chaquetasyabrigos', component: ChaquetasyabrigosComponent },
@@ -46,6 +48,14 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'insertarPrenda', component: InsertarPrendaComponent },
   { path: 'misPrendas', component: MisPrendasComponent },
+  { path: 'registro', component: RegisterComponent },
+  { path: 'tag/:idtag', component: TagComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'conjunto', component: ConjuntoComponent, canActivate: [AuthGuard] },
+  { path: 'conjuntos', component: ConjuntosComponent, canActivate: [AuthGuard] },
+  { path: 'login', component: LoginComponent },
+  { path: 'insertarPrenda', component: InsertarPrendaComponent, canActivate: [AuthGuard] },
+  { path: 'misPrendas', component: MisPrendasComponent, canActivate: [AuthGuard] },
   { path: '**', component: HomeComponent },
 
 ]

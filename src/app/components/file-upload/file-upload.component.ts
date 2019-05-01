@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { AuthService } from '../../servicios/auth.service';
+import { AuthService } from '../auth/services/auth.service';
 
 class ImageSnippet {
   pending = false;
