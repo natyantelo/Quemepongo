@@ -55,7 +55,7 @@ export class LoginService {
   }
   public decode(): Observable<boolean> | boolean {
     if (!this.token) {
-      this.router.navigateByUrl('conjuntos');
+      this.router.navigateByUrl('/conjuntos');
       return false;
     }
     return this.httpCliente.post(`${this.urlBase}user/decode`, { token: this.token }).pipe(map((resp: any) => {

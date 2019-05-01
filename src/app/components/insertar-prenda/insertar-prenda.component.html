@@ -2,10 +2,11 @@
     <h3>Añade tus prendas favoritas</h3>
     <hr />
     <p>Aqui puedes añadir las prendas de tu armario para poder hacer tus combinaciones</p>
-    <form>
-        <input class="form-control form-control-lg" type="text" placeholder="Nombre">
-        <input class="form-control form-control-lg" type="text" placeholder="Descripción">
-        <input class="form-control form-control-lg" type="file" placeholder="imagen">
-        <button class="mt-2 align-center btn btn-primary">Añadir prenda</button>
+    <form [formGroup]="AnadirPrendaForm">
+        <input formControlName="nombre" class="form-control form-control-lg" type="text" placeholder="Nombre">
+        <input formControlName="descripcion" class="form-control form-control-lg" type="text" placeholder="Descripción">
+        <input formControlName="imagen" class="form-control form-control-lg" type="file" placeholder="imagen">
+        <button class="mt-2 align-center btn btn-primary" (click)="AnadirPrenda()">Añadir prenda</button>
+
     </form>
 </div>

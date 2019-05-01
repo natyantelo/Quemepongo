@@ -1,7 +1,7 @@
 <div class="container-fluid mt-2">
   <h3>Nuevo usuario</h3>
   <hr>
-  <form>
+  <form [formGroup]="registerForm" (ngSubmit)="register()">
     <div class="form-group">
       <label for="inputNombre">Nombre*</label>
       <input type="text" class="form-control" id="inputNombre" placeholder="Nombre">
@@ -23,10 +23,10 @@
           Privacidad</a></label>
     </div>
     <div class="form-group">
-      <input type="checkbox" id="privacidad" /><label for="privacidad"> Deseo suscribirme a la
+      <input type="checkbox" id="newsLetter" /><label for="privacidad"> Deseo suscribirme a la
         NewsLetter</label>
     </div>
 
-    <button type="submit" class="btn btn-primary">Registrarse</button>
+    <button type="submit" class="btn btn-primary" routerLink='/login'>Registrarse</button>
   </form>
 </div>

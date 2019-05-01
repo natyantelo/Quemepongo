@@ -1,8 +1,6 @@
 import { State, Action, StateContext, Selector } from '@ngxs/store';
 import { Global } from '../models/shared.models';
-/* import {
-  Login,
-} from '../servicios/login.service'; */
+import { Login } from '../guards/auth.actions';
 
 
 @State<Global>({
@@ -17,7 +15,7 @@ export class GlobalState {
     return isFetching;
   }
 
-  @Action([/* Login */])
+  @Action([Login])
   startFetching({ patchState }: StateContext<Global>) {
     patchState({ isFetching: true });
   }
